@@ -1,0 +1,39 @@
+Retrieval-Augmented Generation, or RAG, is a technique that combines a
+retrieval system with a language model. Instead of relying only on what
+the model learned during training, RAG looks up relevant information
+from an external source at the moment a question is asked, and feeds
+that information to the model as context.
+
+The retrieval step typically works by converting text into embeddings,
+which are numerical vectors that capture meaning. Pieces of text with
+similar meaning end up with vectors that point in similar directions in
+high-dimensional space. When a user asks a question, the question is
+also converted into an embedding, and the system searches for stored
+chunks whose embeddings are closest to the question's embedding.
+
+Cosine similarity is the most common way to measure how close two
+embeddings are. It calculates the angle between two vectors rather than
+the distance between them, which makes it less sensitive to differences
+in vector length and more sensitive to differences in direction, or
+meaning.
+
+Chunking is the process of splitting a long document into smaller
+pieces before embedding it. This matters because embedding models have
+a limited context window, and because smaller chunks tend to produce
+more precise retrieval results. If a chunk is too large, it may contain
+several unrelated ideas, which makes its embedding a blurry average of
+all of them.
+
+A vector store is a system for storing embeddings alongside their
+original text, and for efficiently searching through them when a query
+comes in. Small vector stores can simply compare a query against every
+stored vector, an approach called brute-force search. Larger systems
+use indexing structures to avoid checking every single vector, trading
+a small amount of accuracy for a large amount of speed.
+
+Once relevant chunks are retrieved, they are inserted into a prompt
+template along with the original question, and the combined prompt is
+sent to a language model. The model is typically instructed to answer
+using only the provided context, which reduces the chance that it
+invents information that isn't actually supported by the source
+material.
