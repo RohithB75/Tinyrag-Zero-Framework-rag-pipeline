@@ -148,7 +148,7 @@ def main() -> None:
             [data-testid="stSidebar"] .stButton > button {
                 width: 100%;
                 background: #0f172a;
-                color: #f8fafc;
+                color: #f8fafc !important;
                 border: 1px solid #0f172a;
                 border-radius: 12px;
                 font-weight: 600;
@@ -157,7 +157,13 @@ def main() -> None:
             [data-testid="stSidebar"] .stButton > button:hover {
                 background: #1e293b;
                 border-color: #1e293b;
-                color: #f8fafc;
+                color: #f8fafc !important;
+            }
+
+            [data-testid="stSidebar"] .stButton > button *,
+            [data-testid="stSidebar"] .stButton > button span,
+            [data-testid="stSidebar"] .stButton > button p {
+                color: #f8fafc !important;
             }
 
             [data-testid="stSidebar"] .stRadio,
@@ -174,6 +180,104 @@ def main() -> None:
                 color: #0f172a !important;
             }
 
+            [data-testid="stSidebar"] .stFileUploader button,
+            [data-testid="stSidebar"] .stFileUploader button *,
+            [data-testid="stSidebar"] .stFileUploader label,
+            [data-testid="stSidebar"] .stFileUploader span,
+            [data-testid="stSidebar"] .stFileUploader p,
+            [data-testid="stSidebar"] .stFileUploader small,
+            [data-testid="stSidebar"] .stFileUploader div {
+                color: #0f172a !important;
+            }
+
+            [data-testid="stSidebar"] .stFileUploader section,
+            [data-testid="stSidebar"] .stFileUploader section * {
+                border-color: #cbd5e1;
+                color: #0f172a !important;
+            }
+
+            [data-testid="stSidebar"] .stFileUploader > div {
+                background: #ffffff;
+                border: 1px solid #cbd5e1;
+                border-radius: 14px;
+                padding: 0.2rem;
+            }
+
+            [data-testid="stSidebar"] [data-testid="stFileUploader"],
+            [data-testid="stSidebar"] [data-testid="stFileUploader"] * {
+                color: #0f172a !important;
+            }
+
+            [data-testid="stSidebar"] [data-testid="stFileUploader"] section,
+            [data-testid="stSidebar"] [data-testid="stFileUploader"] section * {
+                background: #ffffff !important;
+            }
+
+            [data-testid="stSidebar"] [data-testid="stFileUploader"] button {
+                background: #ffffff !important;
+                color: #0f172a !important;
+            }
+
+            [data-testid="stSidebar"] .stFileUploader [data-testid="stFileUploaderDropzone"] {
+                background: #ffffff;
+                border-radius: 14px;
+            }
+
+            [data-testid="stSidebar"] .stFileUploader [data-testid="stFileUploaderDropzone"] * {
+                color: #0f172a !important;
+            }
+
+            [data-testid="stSidebar"] .stFileUploader [data-testid="stFileUploaderFileName"] {
+                color: #0f172a !important;
+                font-weight: 600;
+            }
+
+            [data-testid="stSidebar"] .stFileUploader [data-testid="stFileUploaderFileName"],
+            [data-testid="stSidebar"] .stFileUploader [data-testid="stFileUploaderFileName"] *,
+            [data-testid="stSidebar"] .stFileUploader [data-testid="stFileUploaderFileName"] button,
+            [data-testid="stSidebar"] .stFileUploader [data-testid="stFileUploaderFileName"] button * {
+                color: #0f172a !important;
+            }
+
+            [data-testid="stSidebar"] .stFileUploader [data-testid="stFileUploaderFileName"] *,
+            [data-testid="stSidebar"] .stFileUploader [data-testid="stFileUploaderFileName"] + div *,
+            [data-testid="stSidebar"] .stFileUploader [data-testid="stFileUploaderFileName"] ~ div *,
+            [data-testid="stSidebar"] .stFileUploader [data-testid="stFileUploaderFileName"] svg,
+            [data-testid="stSidebar"] .stFileUploader [data-testid="stFileUploaderFileName"] path {
+                color: #0f172a !important;
+                fill: #0f172a !important;
+                stroke: #0f172a !important;
+            }
+
+            [data-testid="stSidebar"] .stFileUploader [data-testid="stFileUploaderFileName"] + div,
+            [data-testid="stSidebar"] .stFileUploader [data-testid="stFileUploaderFileName"] ~ div {
+                color: #475569 !important;
+            }
+
+            [data-testid="stSidebar"] .stFileUploader [data-testid="stFileUploaderFileName"] + div *,
+            [data-testid="stSidebar"] .stFileUploader [data-testid="stFileUploaderFileName"] ~ div * {
+                color: #475569 !important;
+            }
+
+            [data-testid="stSidebar"] .stFileUploader [data-testid="stFileUploaderFileName"] + div *,
+            [data-testid="stSidebar"] .stFileUploader [data-testid="stFileUploaderFileName"] ~ div * {
+                color: #475569 !important;
+                fill: #475569 !important;
+                stroke: #475569 !important;
+            }
+
+            [data-testid="stSidebar"] .stFileUploader button {
+                background: #ffffff;
+                border: 1px solid #93c5fd;
+                border-radius: 10px;
+                font-weight: 600;
+            }
+
+            [data-testid="stSidebar"] .stFileUploader button:hover {
+                background: #eff6ff;
+                border-color: #60a5fa;
+            }
+
             [data-testid="stSidebar"] .stInfo {
                 border-radius: 16px;
                 border: 1px solid #dbeafe;
@@ -183,7 +287,7 @@ def main() -> None:
                 width: 100%;
                 min-height: 3rem;
                 background: #ffffff;
-                color: #0f172a;
+                color: #0f172a !important;
                 border: 1px solid #cbd5e1;
                 border-radius: 14px;
                 font-weight: 700;
@@ -192,8 +296,14 @@ def main() -> None:
 
             div[data-testid="column"] .stButton > button:hover {
                 background: #eff6ff;
-                color: #0f172a;
+                color: #0f172a !important;
                 border-color: #93c5fd;
+            }
+
+            div[data-testid="column"] .stButton > button *,
+            div[data-testid="column"] .stButton > button span,
+            div[data-testid="column"] .stButton > button p {
+                color: #0f172a !important;
             }
 
             div[data-testid="column"] .stButton > button:focus-visible {
@@ -303,6 +413,144 @@ def main() -> None:
                 padding: 0.85rem 1rem;
                 box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
             }
+
+            [data-testid="stMetric"] * {
+                color: #0f172a !important;
+                opacity: 1 !important;
+            }
+
+            [data-testid="stMetric"] label,
+            [data-testid="stMetric"] [data-testid="stMetricLabel"],
+            [data-testid="stMetric"] [data-testid="stMetricValue"],
+            [data-testid="stMetric"] [data-testid="stMetricDelta"],
+            [data-testid="stMetric"] span,
+            [data-testid="stMetric"] div {
+                color: #0f172a !important;
+                opacity: 1 !important;
+            }
+
+            .chat-section {
+                margin-top: 2rem;
+            }
+
+            .chat-section h2 {
+                margin-bottom: 0.35rem;
+            }
+
+            .chat-section .stWrite,
+            .chat-section p {
+                color: #475569;
+            }
+
+            .chat-shell {
+                background: #ffffff;
+                border: 1px solid #dbe3ef;
+                border-radius: 24px;
+                box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+                padding: 1rem 1.1rem 1.15rem;
+            }
+
+            .stChatMessage {
+                border-radius: 18px;
+                padding: 0.25rem 0;
+            }
+
+            .stChatMessage [data-testid="stChatMessageContent"] {
+                border-radius: 18px;
+                padding: 0.9rem 1rem;
+            }
+
+            .stChatMessage [data-testid="stChatMessageContent"] p,
+            .stChatMessage [data-testid="stChatMessageContent"] li,
+            .stChatMessage [data-testid="stChatMessageContent"] span {
+                color: #0f172a !important;
+            }
+
+            .stChatMessage[data-testid="stChatMessage"] {
+                margin-bottom: 0.55rem;
+            }
+
+            .stChatMessage[data-testid="stChatMessage"]:has([aria-label="assistant"]) [data-testid="stChatMessageContent"] {
+                background: #f8fafc;
+                border: 1px solid #dbe3ef;
+            }
+
+            .stChatMessage[data-testid="stChatMessage"]:has([aria-label="user"]) [data-testid="stChatMessageContent"] {
+                background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+                border: 1px solid #0f172a;
+            }
+
+            .stChatMessage[data-testid="stChatMessage"]:has([aria-label="user"]) [data-testid="stChatMessageContent"] p,
+            .stChatMessage[data-testid="stChatMessage"]:has([aria-label="user"]) [data-testid="stChatMessageContent"] span {
+                color: #f8fafc !important;
+            }
+
+            .chat-input-form {
+                margin-top: 0.85rem;
+            }
+
+            .chat-input-form [data-testid="stForm"] {
+                border: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .chat-input-row {
+                display: flex;
+                gap: 0.55rem;
+                align-items: center;
+            }
+
+            .chat-input-row > div:first-child {
+                flex: 1 1 auto;
+            }
+
+            .chat-input-row > div:last-child {
+                flex: 0 0 auto;
+                width: auto;
+            }
+
+            .chat-input-form input {
+                width: 100%;
+                border: 1px solid #cbd5e1;
+                box-shadow: 0 10px 22px rgba(15, 23, 42, 0.05);
+                background: #ffffff;
+                border-radius: 16px;
+                padding: 0.88rem 1rem;
+                color: #0f172a !important;
+                outline: none;
+            }
+
+            .chat-input-form input::placeholder {
+                color: #64748b !important;
+            }
+
+            .chat-send-button button {
+                width: 3rem !important;
+                min-width: 3rem !important;
+                height: 3rem !important;
+                padding: 0 !important;
+                border-radius: 999px !important;
+                background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
+                color: #f8fafc !important;
+                border: 1px solid #0f172a !important;
+                font-weight: 700;
+                box-shadow: 0 10px 24px rgba(15, 23, 42, 0.14);
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                line-height: 1;
+            }
+
+            .chat-send-button button:hover {
+                filter: brightness(1.05);
+                transform: translateY(-1px);
+            }
+
+            .chat-send-button button span {
+                font-size: 1.05rem;
+                line-height: 1;
+            }
         </style>
         """,
         unsafe_allow_html=True,
@@ -394,28 +642,23 @@ def main() -> None:
     st.caption(f"Active document: {st.session_state.document_name}")
     st.markdown("</div>", unsafe_allow_html=True)
 
+    st.markdown("<section class='chat-section'>", unsafe_allow_html=True)
     st.subheader("Chat")
-    st.write("Ask a question in plain language. If you are not sure what to ask, try one of the examples below.")
+    st.caption("Ask a question in plain language.")
 
-    example_left, example_mid, example_right = st.columns(3)
-    with example_left:
-        if st.button("🧠 What is RAG?", use_container_width=True):
-            ask_and_store("What is RAG?", top_k)
-            st.rerun()
-    with example_mid:
-        if st.button("✂️ Why does chunking matter?", use_container_width=True):
-            ask_and_store("Why does chunking matter?", top_k)
-            st.rerun()
-    with example_right:
-        if st.button("🔎 How does retrieval work?", use_container_width=True):
-            ask_and_store("How does retrieval work?", top_k)
-            st.rerun()
-
+    st.markdown("<div class='chat-shell'>", unsafe_allow_html=True)
     for message in st.session_state.messages:
         render_message(message)
 
-    prompt = st.chat_input("Ask a question about the document")
-    if prompt:
+    with st.form("chat_prompt_form", clear_on_submit=True):
+        input_col, button_col = st.columns([0.92, 0.08], gap="small")
+        with input_col:
+            prompt = st.text_input("Message", placeholder="Ask a question about the document", label_visibility="collapsed")
+        with button_col:
+            submitted = st.form_submit_button("➤", use_container_width=True)
+    st.markdown("</div>", unsafe_allow_html=True)
+
+    if submitted and prompt:
         with st.chat_message("user"):
             st.markdown(prompt)
 
@@ -432,6 +675,8 @@ def main() -> None:
 
         st.session_state.messages.append({"role": "user", "content": prompt})
         st.session_state.messages.append({"role": "assistant", "content": answer, "sources": sources or []})
+
+    st.markdown("</section>", unsafe_allow_html=True)
 
 
 if __name__ == "__main__":
