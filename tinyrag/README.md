@@ -20,6 +20,7 @@ tinyrag/
 ├── README.md
 ├── requirements.txt
 ├── main.py                 # CLI entry point
+├── streamlit_app.py        # polished Streamlit UI
 ├── data/
 │   └── sample_doc.txt       # test document (about RAG itself)
 └── src/
@@ -53,6 +54,14 @@ since `src` is imported as a package:
 ```bash
 python main.py data/sample_doc.txt
 ```
+
+For the Streamlit interface, run:
+
+```bash
+streamlit run streamlit_app.py
+```
+
+The UI lets you load the bundled sample document or upload your own `.txt` or `.md` file, rebuild the index with different chunk settings, and inspect the retrieved chunks under each answer.
 
 Try asking it: "What is cosine similarity?" or "Why does chunking
 matter?" — and watch the retrieved chunks print out before the answer,
