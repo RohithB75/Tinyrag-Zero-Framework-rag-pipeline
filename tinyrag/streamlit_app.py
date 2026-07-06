@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 from pathlib import Path
 
@@ -84,7 +84,7 @@ def render_sources(sources: list[tuple[float, dict]], document_name: str) -> Non
                         <span>Passage {index}</span>
                         <span>Similarity {score:.3f}</span>
                     </div>
-                    <div class="chunk-card__meta">Source: {source} · Chunk ID: {chunk_id}</div>
+                    <div class="chunk-card__meta">Source: {source} Â· Chunk ID: {chunk_id}</div>
                     <div class="chunk-card__body">{preview}</div>
                 </div>
                 """,
@@ -402,6 +402,38 @@ def main() -> None:
                 font-size: 0.95rem;
             }
 
+            [data-testid="stExpander"] {
+                background: #ffffff;
+                border: 1px solid #dbe3ef;
+                border-radius: 16px;
+                box-shadow: 0 8px 22px rgba(15, 23, 42, 0.05);
+                overflow: hidden;
+            }
+
+            [data-testid="stExpander"] details {
+                background: #ffffff;
+            }
+
+            [data-testid="stExpander"] summary {
+                background: #ffffff !important;
+                color: #0f172a !important;
+            }
+
+            [data-testid="stExpander"] summary *,
+            [data-testid="stExpander"] summary p,
+            [data-testid="stExpander"] summary span,
+            [data-testid="stExpander"] summary svg,
+            [data-testid="stExpander"] summary path {
+                color: #0f172a !important;
+                fill: #0f172a !important;
+                stroke: #0f172a !important;
+            }
+
+            [data-testid="stExpander"] [data-testid="stExpanderDetails"] {
+                background: #ffffff;
+                color: #0f172a;
+            }
+
             .stChatMessage {
                 border-radius: 18px;
             }
@@ -525,7 +557,7 @@ def main() -> None:
                 color: #64748b !important;
             }
 
-            .chat-send-button button {
+            .chat-input-form button {
                 width: 3rem !important;
                 min-width: 3rem !important;
                 height: 3rem !important;
@@ -536,20 +568,25 @@ def main() -> None:
                 border: 1px solid #0f172a !important;
                 font-weight: 700;
                 box-shadow: 0 10px 24px rgba(15, 23, 42, 0.14);
-                display: inline-flex;
+                display: inline-flex !important;
                 align-items: center;
                 justify-content: center;
                 line-height: 1;
+                font-size: 1.15rem !important;
+                -webkit-text-fill-color: #f8fafc !important;
             }
 
-            .chat-send-button button:hover {
+            .chat-input-form button,
+            .chat-input-form button * {
+                color: #f8fafc !important;
+                fill: #f8fafc !important;
+                stroke: #f8fafc !important;
+                -webkit-text-fill-color: #f8fafc !important;
+            }
+
+            .chat-input-form button:hover {
                 filter: brightness(1.05);
                 transform: translateY(-1px);
-            }
-
-            .chat-send-button button span {
-                font-size: 1.05rem;
-                line-height: 1;
             }
         </style>
         """,
@@ -650,15 +687,10 @@ def main() -> None:
     for message in st.session_state.messages:
         render_message(message)
 
-    with st.form("chat_prompt_form", clear_on_submit=True):
-        input_col, button_col = st.columns([0.92, 0.08], gap="small")
-        with input_col:
-            prompt = st.text_input("Message", placeholder="Ask a question about the document", label_visibility="collapsed")
-        with button_col:
-            submitted = st.form_submit_button("➤", use_container_width=True)
+    prompt = st.chat_input("Ask a question about the document")
     st.markdown("</div>", unsafe_allow_html=True)
 
-    if submitted and prompt:
+    if prompt:
         with st.chat_message("user"):
             st.markdown(prompt)
 
@@ -681,3 +713,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
